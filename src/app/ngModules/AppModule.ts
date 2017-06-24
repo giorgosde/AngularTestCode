@@ -1,11 +1,11 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent }  from '../ngComponents/ngComponents';
+import { AppComponent, dTableComponent }  from '../ngComponents/ngComponents';
 
 @NgModule({
   imports:      [ BrowserModule ],
-  declarations: [ AppComponent ],
+  declarations: [ AppComponent, dTableComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
