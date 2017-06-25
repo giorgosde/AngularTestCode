@@ -1,1 +1,18 @@
-dtablecomponent
+<table style="width:100%">
+    <thead style="background-color:#0077b5; color:white;">
+<tr>
+    <th>FullName</th> 
+    <th>E-mail</th>
+    <th>Phone</th>
+    <th>Website</th>
+  </tr>
+    </thead>
+ <tbody>  
+  <tr *ngFor="let item of items">
+    <td>{{item?.name}}</td> 
+    <td>{{item?.email}}</td>
+    <td>{{item?.phone}}</td>
+    <td>{{item?.website}}</td>
+  </tr>
+  <tbody>
+</table>
