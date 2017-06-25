@@ -1,6 +1,18 @@
 table tr:nth-child(odd) td{
-           background:#ccc;
+    background:#ccc;
 }
 table tr:nth-child(even) td{
-            background:#fff;
+    background:#fff;
+}
+
+thead{
+    background-color:#0077b5; color:white;
+}
+
+table th:nth-child(1){
+    padding-left: 10px;
+    border-radius: 10px 0px 0px 0px;
+}
+table th:nth-last-child(1){
+    border-radius: 0px 10px 0px 0px;
 }
