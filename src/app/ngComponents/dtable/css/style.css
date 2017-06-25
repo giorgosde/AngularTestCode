@@ -1,5 +1,5 @@
 table tr:nth-child(odd) td{
-    background:#ccc;
+    background:#F5F5F5;
 }
 table tr:nth-child(even) td{
     background:#fff;
@@ -9,10 +9,38 @@ thead{
     background-color:#0077b5; color:white;
 }
 
+table th{
+    padding:5px 0px 5px 0px;
+}
 table th:nth-child(1){
-    padding-left: 10px;
+    padding-left: 15px;
     border-radius: 10px 0px 0px 0px;
 }
 table th:nth-last-child(1){
     border-radius: 0px 10px 0px 0px;
+}
+
+tbody td{
+padding:5px 0px 5px 0px;
+}
+
+div.popupMenu {
+    position: absolute;
+    display:none;
+    z-index: 1000000;
+    color:black;
+    background-color: white;
+    width: 100px;
+    padding: 0px !important;
+}
+.fa-sort  {
+    cursor:pointer;
+    width: 5px;
+}
+.fa-sort:hover div.popupMenu {
+    display:block;
+}
+
+ul>li:hover{
+     background-color: red;
 }

@@ -9,7 +9,7 @@ import { ListService } from '../../ngServices/ngServices';
 export class AppComponent  { 
 
 @Output() dTableItems:any;
-@Output() dTableHeaderItmes:any = ['FullName', 'E-mail', 'Phone', 'Website']
+@Output() dTableHeaderItmes:any = ['Name', 'Email', 'Phone', 'Website']
 
 constructor(public listService:ListService){
 this.dTableItems =  listService.getUsers();
