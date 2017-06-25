@@ -1,10 +1,12 @@
 <table style="width:100%">
     <thead>
 <tr>
-    <th>FullName</th> 
-    <th>E-mail</th>
-    <th>Phone</th>
-    <th>Website</th>
+    <th *ngFor="let headerItem of headerItmes">{{headerItem}}  
+        <i class="fa fa-sort"  
+           aria-hidden="true" 
+           (click)="sortTable(headerItem)" 
+           style="margin-left: 10px; cursor:pointer;"></i>
+    </th>
   </tr>
     </thead>
  <tbody>  
