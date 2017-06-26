@@ -4,7 +4,7 @@
     <th *ngFor="let headerItem of headerItmes">{{headerItem}}  
         <i class="fa fa-sort"  
            aria-hidden="true" 
-           style="margin-left: 10px; cursor:pointer;">
+           style="cursor:pointer;">
     <div class="popupMenu">
       <ul *ngFor="let option of sortOptions" style="list-style-type: none; margin-left: -30px;">
         <li  (click)="sortTable(headerItem, option.value)">{{option?.text}}</li>

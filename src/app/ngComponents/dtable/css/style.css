@@ -41,6 +41,10 @@ div.popupMenu {
     display:block;
 }
 
+ul>li{
+   margin-left: -10px;
+padding: 5px 0px 5px 5px;
+}
 ul>li:hover{
-     background-color: red;
+    background-color: #F5F5F5;
 }
