@@ -1,33 +1,28 @@
 <i class="fa fa-info-circle" 
    aria-hidden="true" 
    style="cursor:pointer;" 
-   data-toggle="modal" 
-   data-target="#myModal"></i>
+   (click)="showModal()"></i>
 
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">
-            <i class="fa fa-user-circle" aria-hidden="true"></i>{{user?.name}}</h4>
-      </div>
-      <div class="modal-body">
-          <p><i class="fa fa-briefcase" aria-hidden="true"></i>Company Details:</p>
+
+<div id="myModal" class="modal" [style.display]="displayValue">
+  <div class="modal-content" style="width: 400px;">
+    <span class="close" (click)="closeModal()">&times;</span>
+        <h4 style="text-align:center;"><i class="fa fa-user-circle" aria-hidden="true"></i>{{user?.name}}</h4><hr/>
+        <p><i class="fa fa-briefcase" aria-hidden="true"></i>Company Details:</p>
           <ul id="modal_ul">
               <li><span id="label">Name:</span>{{user?.company?.name  || "N/A"}}</li>
               <li><span id="label">Sector:</span>{{user?.company?.bs  || "N/A"}}</li>
           </ul>
-          <p><i class="fa fa-home" aria-hidden="true"></i>Address Details:</p>
+
+         <p><i class="fa fa-home" aria-hidden="true"></i>Address Details:</p>
           <ul id="modal_ul">
               <li><span id="label">Street:</span>{{user?.address?.street  || "N/A"}}</li>
               <li><span id="label">Suite:</span>{{user?.address?.suite  || "N/A"}}</li>
               <li><span id="label">City:</span>{{user?.address?.city  || "N/A"}}</li>
               <li><span id="label">Zip Code:</span>{{user?.address?.zipcode  || "N/A"}}</li>
-         </ul>
+         </ul><hr/>
+         <div class="row" style="text-align: right; padding-right: 15px;">
+         <button type="button" class="btn btn-success" (click)="closeModal()">OK</button></div>        
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-      </div>
-    </div>
   </div>
-</div>
+

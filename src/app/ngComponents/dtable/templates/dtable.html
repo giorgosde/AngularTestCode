@@ -21,7 +21,7 @@
  
  <tbody>  
   <tr *ngFor="let item of visibleItems">    
-    <td><personalInfo-modal [user]=item></personalInfo-modal>{{item?.name}}</td> 
+    <td><personalInfo-modal [user]="item"></personalInfo-modal>{{item?.name}}</td> 
     <td>{{item?.email}}</td>
     <td>{{item?.phone}}</td>
     <td>{{item?.website  || "N/A"}}</td>
