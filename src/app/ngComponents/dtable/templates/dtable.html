@@ -16,11 +16,32 @@
  
  <tbody>  
   <tr *ngFor="let item of items">    
-  
-    <td><i class="fa fa-info-circle" aria-hidden="true"></i> {{item?.name}}</td> 
+    <td><i class="fa fa-info-circle" aria-hidden="true" 
+           data-toggle="modal" data-target="#myModal" 
+           style="cursor:pointer;"></i> {{item?.name}}</td> 
     <td>{{item?.email}}</td>
     <td>{{item?.phone}}</td>
     <td>{{item?.website}}</td>
+    <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">
+            <p><i class="fa fa-user-circle" aria-hidden="true" style="padding-right: 10px;"></i>User:{{item?.name}}<p></h4>
+      </div>
+      <div class="modal-body">
+        <i class="fa fa-home" aria-hidden="true"></i>
+        <i class="fa fa-briefcase" aria-hidden="true"></i>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+    <!-- Modal -->
   </tr>
-  <tbody>
 </table>
+<tbody>

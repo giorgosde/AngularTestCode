@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Utils } from '../Utils';
 
 @Component({
@@ -12,8 +12,15 @@ export class dTableComponent  {
   @Input() headerItmes:any;
   @Input() items:any;
   sortOptions:any =[{text:"Ascending", value:"asc"},{text:"Descending", value:"desc"}];
+  @Output() onIdSelect: EventEmitter<number> = new EventEmitter<number>();
 
 sortTable(element:any, option:any){
   this.items = this.items.sort(Utils.compareValues(element.toLowerCase(), option));
 }
+
+sendUserId(idValue:any){
+  this.onIdSelect.emit(idValue);
+}
+
+
 }
