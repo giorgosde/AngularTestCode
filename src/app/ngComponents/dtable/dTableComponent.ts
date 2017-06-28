@@ -11,8 +11,10 @@ export class dTableComponent  {
 
   @Input() headerItmes:any;
   @Input() items:any;
-  sortOptions:any =[{text:"Ascending", value:"asc"},{text:"Descending", value:"desc"}];
+  
   @Output() onIdSelect: EventEmitter<number> = new EventEmitter<number>();
+  sortOptions:any =[{text:"Ascending", value:"asc"},{text:"Descending", value:"desc"}];
+  searchString:any;
 
 sortTable(element:any, option:any){
   this.items = this.items.sort(Utils.compareValues(element.toLowerCase(), option));
@@ -22,5 +24,10 @@ sendUserId(idValue:any){
   this.onIdSelect.emit(idValue);
 }
 
+filterTable(criteria:any){
+  var itemsJSON = JSON.stringify(this.items);
+  var res = itemsJSON.match(criteria);
+console.error("result:", res);
+}
 
 }

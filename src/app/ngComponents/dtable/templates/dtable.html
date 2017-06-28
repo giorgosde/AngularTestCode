@@ -1,3 +1,6 @@
+<input type="text" 
+[(ngModel)]="searchString"
+(ngModelChange)="filterTable($event)">
 <table style="width:100%">
     <thead>
 <tr>
