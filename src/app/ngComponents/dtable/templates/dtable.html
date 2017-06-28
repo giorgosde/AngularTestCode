@@ -21,43 +21,10 @@
  
  <tbody>  
   <tr *ngFor="let item of visibleItems">    
-    <td><i class="fa fa-info-circle" aria-hidden="true" 
-           data-toggle="modal" data-target="#myModal" 
-           style="cursor:pointer;"></i> {{item?.name}}</td> 
+    <td><personalInfo-modal [user]=item></personalInfo-modal>{{item?.name}}</td> 
     <td>{{item?.email}}</td>
     <td>{{item?.phone}}</td>
-    <td>{{item?.website}}</td>
-
-    <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">
-            <i class="fa fa-user-circle" aria-hidden="true"></i>{{item?.name}}</h4>
-      </div>
-      <div class="modal-body">
-          <p><i class="fa fa-briefcase" aria-hidden="true"></i>Company Details:</p>
-          <ul id="modal_ul">
-              <li><span id="label">Name:</span>{{item?.company?.name}}</li>
-              <li><span id="label">Sector:</span>{{item?.company?.bs}}</li>
-          </ul>
-          <p><i class="fa fa-home" aria-hidden="true"></i>Address Details:</p>
-          <ul id="modal_ul">
-              <li><span id="label">Street:</span>{{item?.address?.street}}</li>
-              <li><span id="label">Suite:</span>{{item?.address?.suite}}</li>
-              <li><span id="label">City:</span>{{item?.address?.city}}</li>
-              <li><span id="label">Zip Code:</span>{{item?.address?.zipcode}}</li>
-         </ul>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-    <!-- /Modal -->
-
+    <td>{{item?.website  || "N/A"}}</td>
   </tr>
 </table>
 <tbody>
