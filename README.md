@@ -5,8 +5,8 @@ Initial structured is based on Angular QuickStart: https://github.com/angular/qu
 
 __To run the project:__
 
-**1. git clone https://github.com/giorgosde/AngularTestCode.git
-2. npm start**
+1. git clone https://github.com/giorgosde/AngularTestCode.git
+2. npm start
 
 
 _Tip: in case of breakdown:_
