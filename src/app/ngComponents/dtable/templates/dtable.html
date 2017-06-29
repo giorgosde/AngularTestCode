@@ -10,15 +10,15 @@
 <table style="width:100%">
     <thead>
 <tr>
-    <th *ngFor="let headerItem of headerItmes">{{headerItem}}  
-        <i class="fa fa-sort"  
-           aria-hidden="true" 
-           style="cursor:pointer;">
-    <div class="popupMenu">
-      <ul *ngFor="let option of sortOptions" style="list-style-type: none; margin-left: -30px;">
-        <li  (click)="sortTable(headerItem, option.value)">{{option?.text}}</li>
-        </ul>
-    </div></i>
+    <th *ngFor="let headerItem of headerItmes">  
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{headerItem}}  
+    <i class="fa fa-sort"></i></button>
+  <ul class="dropdown-menu" style="color:black;">
+     <li *ngFor="let option of sortOptions" (click)="sortTable(headerItem, option.value)">{{option?.text}}</li>
+  </ul>
+</div>
+
     </th>
 </tr>
     </thead>

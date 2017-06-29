@@ -24,26 +24,8 @@ tbody td{
 padding:5px 0px 5px 0px;
 }
 
-div.popupMenu {
-    position: absolute;
-    display:none;
-    z-index: 1000000;
-    color:black;
-    background-color: white;
-    width: 100px;
-    padding: 0px !important;
-}
-.fa-sort  {
-    cursor:pointer;
-    width: 5px;
-}
-.fa-sort:hover div.popupMenu {
-    display:block;
-}
-
 ul>li{
-   margin-left: -10px;
-padding: 5px 0px 5px 5px;
+    padding-left: 20px;
 }
 ul>li:hover{
     background-color: #F5F5F5;
