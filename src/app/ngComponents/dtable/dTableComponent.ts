@@ -31,7 +31,7 @@ sendUserId(idValue:any){
 
 filterTable(searchStr:any){
   var foundRecords = this.items.filter((x:any) => {
-    return x.name.match(searchStr);
+    return x.name.toLowerCase().match(searchStr.toLowerCase());
   });
   this.visibleItems=foundRecords;
 }

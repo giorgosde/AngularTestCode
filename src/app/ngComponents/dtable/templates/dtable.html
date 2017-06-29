@@ -1,6 +1,10 @@
 <div class="row">
   <i class="fa fa-search" aria-hidden="true" style="padding-left: 20px;"></i>
-    <input type="text" [(ngModel)]="searchString" (ngModelChange)="filterTable($event)">
+    <input type="text" 
+           placeholder="Search...."
+           [(ngModel)]="searchString" 
+           (ngModelChange)="filterTable($event)"
+           style="margin-bottom:10px;">
 </div>
 
 <table style="width:100%">
@@ -24,7 +28,7 @@
     <td><personalInfo-modal [user]="item"></personalInfo-modal>{{item?.name}}</td> 
     <td>{{item?.email}}</td>
     <td>{{item?.phone}}</td>
-    <td>{{item?.website  || "N/A"}}</td>
+    <td>{{item?.username}}</td>
   </tr>
+ </tbody>
 </table>
-<tbody>

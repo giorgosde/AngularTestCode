@@ -4,12 +4,14 @@ import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 
-import { AppComponent, dTableComponent, PersonalInfoModalComponent }  from '../ngComponents/ngComponents';
+import { AppComponent, dTableComponent, PersonalInfoModalComponent, 
+         ClientStageComponent, DummyStageComponent }  from '../ngComponents/ngComponents';
 import { ListService } from '../ngServices/ngServices';
 
 @NgModule({
-  imports:      [ BrowserModule, HttpModule, NgbModule.forRoot(), FormsModule ],
-  declarations: [ AppComponent, dTableComponent, PersonalInfoModalComponent ],
+  imports:      [ BrowserModule, HttpModule, FormsModule ],
+  declarations: [ AppComponent, dTableComponent, PersonalInfoModalComponent,  
+                 ClientStageComponent, DummyStageComponent ],
   providers:    [ListService],
   bootstrap:    [ AppComponent ]
 })

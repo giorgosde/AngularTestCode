@@ -108,4 +108,10 @@ constructor(private http:Http) { }
     {
      return this.Users;
     }
+// getUsers(){
+//      this.http.get(this.basePath+"/users").map((response:Response) => {
+//                 console.error(response.json());
+//             return response.json();
+//             }).subscribe();
+//             }
 }
