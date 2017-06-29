@@ -1,3 +1,27 @@
 h1{
 color:red;
 }
+
+.navbar-fixed-left {
+  width: 140px;
+  position: fixed;
+  border-radius: 0;
+  height: 100%;
+}
+.navbar-fixed-left .navbar-nav > li {
+  float: none;  
+  width: 139px;
+}
+.navbar-fixed-left + .container {
+  padding-left: 160px;
+}
+.container {
+  height: 1000px;
+}
+.wrapper {
+  margin-left: 140px;
+}
+
+i{
+  padding: 0px 5px 0px 5px;
+}
