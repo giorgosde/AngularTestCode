@@ -12,13 +12,13 @@
 <tr>
     <th *ngFor="let headerItem of headerItmes">  
 <div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{headerItem}}  
-    <i class="fa fa-sort"></i></button>
-  <ul class="dropdown-menu" style="color:black;">
+    <p id="headerLabel" type="button" data-toggle="dropdown">
+    {{headerItem}}
+    <i class="fa fa-sort" aria-hidden="true" style="cursor:pointer;"></i></p>
+  <ul class="dropdown-menu" style="color:black; cursor:pointer;">
      <li *ngFor="let option of sortOptions" (click)="sortTable(headerItem, option.value)">{{option?.text}}</li>
   </ul>
 </div>
-
     </th>
 </tr>
     </thead>

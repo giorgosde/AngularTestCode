@@ -30,3 +30,9 @@ ul>li{
 ul>li:hover{
     background-color: #F5F5F5;
 }
+
+#headerLabel{
+    margin-bottom:0px; 
+    display:inline-block; 
+    cursor:pointer;
+}
