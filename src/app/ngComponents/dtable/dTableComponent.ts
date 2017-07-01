@@ -8,14 +8,12 @@ import { Utils } from '../Utils';
 })
 export class dTableComponent  {
   constructor(){};
-
   @Input() headerItmes:any;
   @Input() items:any;
   
-  @Output() onIdSelect: EventEmitter<number> = new EventEmitter<number>();
   sortOptions:any =[{text:"Ascending", value:"asc"},{text:"Descending", value:"desc"}];
   searchString:string;
-  visibleItems: Array<any>;
+  visibleItems:Array<any>;
   isInputValid:boolean=true;
 
 sortTable(element:any, option:any){
@@ -26,21 +24,23 @@ ngOnInit(){
   this.visibleItems=this.items;
 }
 
-sendUserId(idValue:any){
-  this.onIdSelect.emit(idValue);
+filterTable(searchStr:any){
+  searchStr = searchStr.trim();
+
+  if (searchStr!=null && this.validateInput(searchStr)){
+     var foundRecords = this.items.filter((x:any) => {
+     return x.name.toLowerCase().match(searchStr.toLowerCase()); 
+    });
+    this.visibleItems=foundRecords;
+  } 
+    else if (searchStr===''){
+      this.visibleItems=this.items;
+  }
 }
 
-filterTable(searchStr:any){
-var validRegex = new RegExp(/^[a-z0-9 ]+$/i);
-
-if (validRegex.test(searchStr)) {
-    this.isInputValid=true;
-    var foundRecords = this.items.filter((x:any) => {
-    return x.name.toLowerCase().match(searchStr.toLowerCase());
-  });
-  this.visibleItems=foundRecords;
-   } else {
-    this.isInputValid=false;}
+validateInput(stringValue:any){
+  var validRegex = new RegExp(/^[a-z0-9 ]+$/i);      
+  return validRegex.test(stringValue)? this.isInputValid=true : this.isInputValid=false; 
 }
 
 }
