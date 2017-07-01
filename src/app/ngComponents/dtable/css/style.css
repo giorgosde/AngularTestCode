@@ -46,6 +46,12 @@ ul>li:hover{
     background-color:#0077b5; 
     color:white; 
     border-radius: 0px 0px 10px 10px;
-    /*padding-left: 25px;*/
     padding:5px 0px 5px 25px;
+}
+
+#resetButton{
+    background-color: Transparent;
+    border: none;
+    text-decoration: underline;
+    color: #00cc00;
 }

@@ -1,13 +1,17 @@
-<div class="row">
+<div class="row" style="padding-top:50px;">
   <i class="fa fa-search" aria-hidden="true" style="padding-left: 20px;"></i>
     <input type="text" 
            placeholder="Search...."
            [(ngModel)]="searchString" 
            (ngModelChange)="filterTable($event)"
            style="margin-bottom:10px;"/>
+
            <span *ngIf="searchString!='' && searchString!=' ' && !isInputValid" style="color:red;">
              <i class="fa fa-exclamation-triangle" aria-hidden="true" style="padding:0px 5px 0px 5px;"></i>
-             No special characters allowed!!</span>
+             No special characters/numbers allowed!!</span>
+
+             <button id="resetButton" *ngIf="visibleItems.length != items.length" (click)="ngOnInit()">
+               <i class="fa fa-repeat" aria-hidden="true"  style="padding-right:5px;"></i>Reset</button>
 </div>
 
 <table style="width:100%">
@@ -28,7 +32,7 @@
       <tfoot>
      <tr>
           <td colspan="4" id="footer">
-            <b>{{visibleItems.length - visibleItems.length + 1}} - {{visibleItems.length}} /{{visibleItems.length}}</b>
+            <b>{{visibleItems.length - visibleItems.length + 1}} - {{visibleItems.length}} /{{items.length}}</b>
           </td>
     </tr>
   </tfoot>

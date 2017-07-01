@@ -22,6 +22,7 @@ sortTable(element:any, option:any){
 
 ngOnInit(){
   this.visibleItems=this.items;
+  this.searchString=' ';
 }
 
 filterTable(searchStr:any){
@@ -39,7 +40,7 @@ filterTable(searchStr:any){
 }
 
 validateInput(stringValue:any){
-  var validRegex = new RegExp(/^[a-z0-9 ]+$/i);      
+  var validRegex = new RegExp(/^[a-z ]+$/i);      
   return validRegex.test(stringValue)? this.isInputValid=true : this.isInputValid=false; 
 }
 
