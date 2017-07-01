@@ -14,8 +14,9 @@ export class dTableComponent  {
   
   @Output() onIdSelect: EventEmitter<number> = new EventEmitter<number>();
   sortOptions:any =[{text:"Ascending", value:"asc"},{text:"Descending", value:"desc"}];
-  searchString:any;
+  searchString:string;
   visibleItems: Array<any>;
+  isInputValid:boolean=true;
 
 sortTable(element:any, option:any){
   this.visibleItems = this.visibleItems.sort(Utils.compareValues(element.toLowerCase(), option));
@@ -30,10 +31,16 @@ sendUserId(idValue:any){
 }
 
 filterTable(searchStr:any){
-  var foundRecords = this.items.filter((x:any) => {
+var validRegex = new RegExp(/^[a-z0-9 ]+$/i);
+
+if (validRegex.test(searchStr)) {
+    this.isInputValid=true;
+    var foundRecords = this.items.filter((x:any) => {
     return x.name.toLowerCase().match(searchStr.toLowerCase());
   });
   this.visibleItems=foundRecords;
+   } else {
+    this.isInputValid=false;}
 }
 
 }

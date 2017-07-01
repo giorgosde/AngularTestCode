@@ -4,7 +4,10 @@
            placeholder="Search...."
            [(ngModel)]="searchString" 
            (ngModelChange)="filterTable($event)"
-           style="margin-bottom:10px;">
+           style="margin-bottom:10px;"/>
+           <span *ngIf="searchString!='' && !isInputValid" style="color:red;">
+             <i class="fa fa-exclamation-triangle" aria-hidden="true" style="padding:0px 5px 0px 5px;"></i>
+             No special characters allowed!!</span>
 </div>
 
 <table style="width:100%">
@@ -37,5 +40,10 @@
     <td>{{item?.phone}}</td>
     <td>{{item?.username}}</td>
   </tr>
+    <tr><td colspan="4" *ngIf="visibleItems.length==0">
+      <div class="alert alert-danger text-center" style="margin-bottom: 0px;">
+        <span><i class="fa fa-meh-o" aria-hidden="true" style="padding-right: 10px;"></i>No records to display!</span>
+      </div>
+    </td></tr>
  </tbody>
 </table>
