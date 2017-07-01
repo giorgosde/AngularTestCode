@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http'
+import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
+import 'rxjs/Rx';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+
 //behavioSubject
 
 
@@ -8,6 +11,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ListService {
  basePath ="https://jsonplaceholder.typicode.com";
+   public bSubject = new BehaviorSubject<any>(null); 
 
 constructor(private http:Http) { }
  Users=[{
@@ -108,10 +112,6 @@ constructor(private http:Http) { }
     {
      return this.Users;
     }
-// getUsers(){
-//      this.http.get(this.basePath+"/users").map((response:Response) => {
-//                 console.error(response.json());
-//             return response.json();
-//             }).subscribe();
-//             }
+
+
 }

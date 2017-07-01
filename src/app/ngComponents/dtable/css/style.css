@@ -35,4 +35,17 @@ ul>li:hover{
     margin-bottom:0px; 
     display:inline-block; 
     cursor:pointer;
+    padding: 0px 5px 0px 5px;
+}
+
+#headerLabel:hover{
+    background-color: #006399;
+}
+
+#footer{
+    background-color:#0077b5; 
+    color:white; 
+    border-radius: 0px 0px 10px 10px;
+    /*padding-left: 25px;*/
+    padding:5px 0px 5px 25px;
 }
