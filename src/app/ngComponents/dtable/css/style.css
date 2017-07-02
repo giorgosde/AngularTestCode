@@ -5,6 +5,11 @@ table tr:nth-child(even) td{
     background:#fff;
 }
 
+table{
+    box-shadow: 4px 3px 5px 0px rgba(0,0,0,0.75);
+    border-radius:10px;
+}
+
 thead{
     background-color:#0077b5; color:white;
 }
@@ -21,7 +26,7 @@ table th:nth-last-child(1){
 }
 
 tbody td{
-padding:5px 0px 5px 0px;
+padding:5px 0px 5px 5px;
 }
 
 ul>li{
