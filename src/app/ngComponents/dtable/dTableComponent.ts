@@ -16,14 +16,19 @@ export class dTableComponent  {
   visibleItems:Array<any>;
   isInputValid:boolean=true;
 
-sortTable(element:any, option:any){
-  this.visibleItems = this.visibleItems.sort(Utils.compareValues(element.toLowerCase(), option));
-}
-
 ngOnInit(){
   this.visibleItems=this.items;
   this.searchString=' ';
 }
+
+ngOnChanges(){
+    this.visibleItems=this.items;
+}
+
+sortTable(element:any, option:any){
+  this.visibleItems = this.visibleItems.sort(Utils.compareValues(element.toLowerCase(), option));
+}
+
 
 filterTable(searchStr:any){
   searchStr = searchStr.trim();

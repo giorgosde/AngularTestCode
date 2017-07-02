@@ -10,7 +10,7 @@
              <i class="fa fa-exclamation-triangle" aria-hidden="true" style="padding:0px 5px 0px 5px;"></i>
              No special characters/numbers allowed!!</span>
 
-             <button id="resetButton" *ngIf="visibleItems.length != items.length" (click)="ngOnInit()">
+             <button id="resetButton" *ngIf="visibleItems?.length != items?.length" (click)="ngOnInit()">
                <i class="fa fa-repeat" aria-hidden="true"  style="padding-right:5px;"></i>Reset</button>
 </div>
 
@@ -32,7 +32,7 @@
       <tfoot>
      <tr>
           <td colspan="4" id="footer">
-            <b>{{visibleItems.length - visibleItems.length + 1}} - {{visibleItems.length}} /{{items.length}}</b>
+            <b>{{visibleItems?.length - visibleItems?.length + 1}} - {{visibleItems?.length}} /{{items?.length}}</b>
           </td>
     </tr>
   </tfoot>
@@ -44,7 +44,7 @@
     <td>{{item?.phone}}</td>
     <td>{{item?.username}}</td>
   </tr>
-    <tr><td colspan="4" *ngIf="visibleItems.length==0">
+    <tr><td colspan="4" *ngIf="visibleItems?.length==0 || visibleItems==null">
       <div class="alert alert-danger text-center" style="margin-bottom: 0px;">
         <span><i class="fa fa-meh-o" aria-hidden="true" style="padding-right: 10px;"></i>No records to display!</span>
       </div>
