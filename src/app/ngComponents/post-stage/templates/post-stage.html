@@ -1,10 +1,10 @@
 <div class="row">
      <label>Select User:</label>
-         <select [(ngModel)]="selectedValue" (ngModelChange)="filterPosts($event)">
+         <select [(ngModel)]="selectedValue" (ngModelChange)="filterPostsByUser($event)">
                 <option *ngFor="let user of users" [value]="user.id">{{user?.name}}</option>
          </select>
 </div>
 
-<div clas="row" *ngFor="let post of posts">
+<div clas="row" *ngFor="let post of visiblePosts">
 <post-thumbnail [postItem]=post></post-thumbnail>
 </div>

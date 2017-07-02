@@ -11,15 +11,19 @@ option:any;
 users:any;
 selectedValue:any;
 posts:any;
+visiblePosts:any;
 
 constructor(public listService:ListService){
   this.listService.getUsers().subscribe(res => this.users=res);
 
-  this.listService.getPosts().subscribe(x => this.posts=x);
+  this.listService.getPosts().subscribe(x => this.posts = this.visiblePosts =x);
 }
 
-filterPosts(e:any){
-console.error(e);
+filterPostsByUser(userId:any){
+    var filteredPosts = this.posts.filter((x:any) => {
+     return x.userId==userId; 
+    });
+    this.visiblePosts=filteredPosts;
 }
 
 }
