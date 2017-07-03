@@ -31,4 +31,8 @@ initializeView(){
   this.selectedValue='';
 }
 
+displayComments(postId:any){
+  console.error("main component", postId);
+}
+
 }

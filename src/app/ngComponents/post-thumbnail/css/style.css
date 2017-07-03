@@ -2,12 +2,21 @@ h4{
     margin:2px; 
     background:#0077b5;
     color:white;
+    padding-left: 5px;
 }
 
 p{
     font-style: italic;
+    padding: 0px 10px 0px 10px;
+    margin-bottom: 0px;
 }
 
 .thumbnail{
     box-shadow: 4px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+i{
+    cursor:pointer;
+    color: #ff6600;
+    margin: 0px 10px 0px 10px;
 }

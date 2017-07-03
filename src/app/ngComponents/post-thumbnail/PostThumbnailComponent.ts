@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'post-thumbnail',
@@ -8,5 +8,12 @@ import { Component, Input } from '@angular/core';
 export class PostThumbnailComponent  {
 
 @Input() postItem:any;
+@Output() onCommentBtnClick = new EventEmitter();
+
 constructor(){}
+
+sendPostId(id:any){
+  this.onCommentBtnClick.emit(id);
+}
+
 }
