@@ -21,6 +21,4 @@ getPosts(){
     return this._http.get(this._basePath + "/posts")
          .map((res:Response)=> res.json());
 } 
-}
-
 } 

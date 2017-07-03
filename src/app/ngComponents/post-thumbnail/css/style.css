@@ -1,0 +1,13 @@
+h4{
+    margin:2px; 
+    background:#0077b5;
+    color:white;
+}
+
+p{
+    font-style: italic;
+}
+
+.thumbnail{
+    box-shadow: 4px 3px 5px 0px rgba(0,0,0,0.75);
+}

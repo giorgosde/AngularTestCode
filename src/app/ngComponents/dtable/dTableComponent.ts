@@ -18,7 +18,7 @@ export class dTableComponent  {
 
 ngOnInit(){
   this.visibleItems=this.items;
-  this.searchString=' ';
+  this.searchString='';
 }
 
 ngOnChanges(){

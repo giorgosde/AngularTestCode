@@ -1,8 +1,11 @@
-<div class="row">
-     <label>Select User:</label>
+<div class="row" style="padding-bottom:40px;">
+     <label style="padding-left:15px;">Display posts for:</label>
          <select [(ngModel)]="selectedValue" (ngModelChange)="filterPostsByUser($event)">
                 <option *ngFor="let user of users" [value]="user.id">{{user?.name}}</option>
          </select>
+
+     <button id="resetButton" *ngIf="visiblePosts?.length != posts?.length" (click)="initializeView()">
+     <i class="fa fa-repeat" aria-hidden="true"  style="padding-right:5px;"></i>Reset</button>
 </div>
 
 <div clas="row" *ngFor="let post of visiblePosts">

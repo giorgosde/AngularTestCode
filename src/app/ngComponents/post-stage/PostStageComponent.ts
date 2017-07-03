@@ -26,4 +26,9 @@ filterPostsByUser(userId:any){
     this.visiblePosts=filteredPosts;
 }
 
+initializeView(){
+  this.visiblePosts = this.posts;
+  this.selectedValue='';
+}
+
 }
