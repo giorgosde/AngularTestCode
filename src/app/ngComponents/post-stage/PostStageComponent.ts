@@ -12,11 +12,12 @@ users:any;
 selectedValue:any;
 posts:any;
 visiblePosts:any;
+postComments:any;
 
 constructor(public listService:ListService){
-  this.listService.getUsers().subscribe(res => this.users=res);
+  this.listService.getUsers().subscribe(res => this.users = res);
 
-  this.listService.getPosts().subscribe(x => this.posts = this.visiblePosts =x);
+  this.listService.getPosts().subscribe(res => this.posts = this.visiblePosts = res);
 }
 
 filterPostsByUser(userId:any){
@@ -32,7 +33,7 @@ initializeView(){
 }
 
 displayComments(postId:any){
-  console.error("main component", postId);
+  this.listService.getCommentsByPostId(postId).subscribe(res => this.postComments = res);
 }
 
 }

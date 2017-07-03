@@ -21,4 +21,10 @@ getPosts(){
     return this._http.get(this._basePath + "/posts")
          .map((res:Response)=> res.json());
 } 
+
+getCommentsByPostId(postId:any){
+    return this._http.get(this._basePath + "/comments?postId=" + postId)
+          .map((res:Response)=> res.json());
+}
+
 } 
