@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { ListService } from '../../ngServices/ngServices';
 
@@ -12,7 +13,6 @@ users:any;
 selectedValue:any;
 posts:any;
 visiblePosts:any;
-postComments:any;
 
 constructor(public listService:ListService){
   this.listService.getUsers().subscribe(res => this.users = res);
@@ -30,10 +30,6 @@ filterPostsByUser(userId:any){
 initializeView(){
   this.visiblePosts = this.posts;
   this.selectedValue='';
-}
-
-displayComments(postId:any){
-  this.listService.getCommentsByPostId(postId).subscribe(res => this.postComments = res);
 }
 
 }

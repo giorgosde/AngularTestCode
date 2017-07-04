@@ -2,6 +2,16 @@
       <div class="caption" style="padding:0px;">
         <h4>{{postItem?.title}}</h4>
         <p>{{postItem?.body}}</p>
-          <i class="fa fa-comments" aria-hidden="true" (click)="sendPostId(postItem?.id)">Comments</i>
+           <span [ngClass]="{'showCommentsBtn': !isCommentVisible, 'hideCommentsBtn': isCommentVisible}" 
+                 (click)="displayComments(postItem?.id)">
+          <i class="fa fa-comments" aria-hidden="true" *ngIf="!isCommentVisible"></i>
+          <i class="fa fa-eye-slash" aria-hidden="true" *ngIf="isCommentVisible"></i>Comments</span> 
+
+        <div *ngFor="let comment of postComments">
+          <ul *ngIf="isCommentVisible">
+            <li>{{comment?.body}}</li>
+          </ul> 
+        </div>
+
       </div>
     </div>

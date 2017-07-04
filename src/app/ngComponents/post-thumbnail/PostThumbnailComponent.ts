@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { ListService } from '../../ngServices/ngServices';
 
 @Component({
   selector: 'post-thumbnail',
@@ -8,12 +9,13 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class PostThumbnailComponent  {
 
 @Input() postItem:any;
-@Output() onCommentBtnClick = new EventEmitter();
+postComments:any;
+isCommentVisible:boolean=false;
 
-constructor(){}
+constructor(public listService:ListService){}
 
-sendPostId(id:any){
-  this.onCommentBtnClick.emit(id);
+displayComments(postId:any){
+  this.isCommentVisible? this.isCommentVisible=false : this.isCommentVisible=true;
+  this.listService.getCommentsByPostId(postId).subscribe(res => this.postComments = res);
 }
-
 }

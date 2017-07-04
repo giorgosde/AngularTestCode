@@ -8,12 +8,7 @@
      <i class="fa fa-repeat" aria-hidden="true"  style="padding-right:5px;"></i>Reset</button>
 </div>
 
-<!--<div *ngFor="let comment of postComments">
-  <ul>
-    <li>{{comment?.body}}</li>
-  </ul> 
-</div>-->
 
 <div clas="row" *ngFor="let post of visiblePosts">
-    <post-thumbnail [postItem]=post (onCommentBtnClick)="displayComments($event)"></post-thumbnail>
+    <post-thumbnail [postItem]=post></post-thumbnail>
 </div>

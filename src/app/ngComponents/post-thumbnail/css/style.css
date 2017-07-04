@@ -15,8 +15,18 @@ p{
     box-shadow: 4px 3px 5px 0px rgba(0,0,0,0.75);
 }
 
-i{
+.thumbnail:hover{
+    transform: scale(1.03);
+}
+
+.showCommentsBtn{
     cursor:pointer;
     color: #ff6600;
+    margin: 0px 10px 0px 10px;
+}
+
+.hideCommentsBtn{
+    cursor:pointer;
+    color: red;
     margin: 0px 10px 0px 10px;
 }
