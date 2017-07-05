@@ -1,4 +1,4 @@
-<div class="row" style="padding-top:50px;">
+<div class="row" style="padding-top:60px;">
   <i class="fa fa-search" aria-hidden="true" style="padding-left: 20px;"></i>
     <input type="text" 
            placeholder="Search...."
@@ -10,7 +10,8 @@
              <i class="fa fa-exclamation-triangle" aria-hidden="true" style="padding:0px 5px 0px 5px;"></i>
              No special characters/numbers allowed!!</span>
 
-             <button id="resetButton" *ngIf="visibleItems?.length != items?.length" (click)="ngOnInit()">
+             <button id="resetButton" *ngIf="visibleItems?.length != items?.length && isInputValid" 
+                     (click)="ngOnInit()">
                <i class="fa fa-repeat" aria-hidden="true"  style="padding-right:5px;"></i>Reset</button>
 </div>
 
