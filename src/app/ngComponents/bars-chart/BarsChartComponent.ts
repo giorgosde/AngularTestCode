@@ -8,7 +8,9 @@ import { Component, Input} from '@angular/core';
 export class BarsChartComponent  {
 @Input() statItems:any;
 @Input() chartTitle:any;
+@Input() displayOption:any;
 
-constructor(){}
+constructor(){
+}
 
 }

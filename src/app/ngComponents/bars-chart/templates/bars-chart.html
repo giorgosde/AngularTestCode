@@ -1,8 +1,15 @@
 
 <h2>{{chartTitle}}</h2>
-<svg class="chart" width="500" [attr.height]="statItems?.length*20" aria-labelledby="title desc" role="img">
+<svg class="chart" width="500" [attr.height]="statItems?.length*20" aria-labelledby="title desc" role="img" *ngIf="displayOption=='horizontal'"> 
   <g class="bar" *ngFor="let statItem of statItems; let i = index;">
-    <rect [attr.width]="statItem.value" height="19" [attr.y]="i*20" fill="red"></rect>
-     <text [attr.x]="statItem.value" [attr.y]="(i+1)*20-i+i-5" font-family="Verdana" fill="blue">{{statItem.key}} - {{statItem.value}}</text>
+    <rect [attr.width]="statItem.value" height="19" [attr.y]="i*20"></rect>
+     <text [attr.x]="statItem.value" [attr.y]="(i+1)*20-i+i-5" fill="black" font-family="Verdana"> {{statItem.key}} - {{statItem.value}}</text>
+  </g>
+</svg>
+
+<svg class="chart vertical-chart" width="500" [attr.height]="200" aria-labelledby="title desc" role="img" *ngIf="displayOption=='vertical'">
+  <g class="barv" *ngFor="let statItem of statItems; let i = index;">
+    <rect [attr.height]="statItem.value" width="19" [attr.x]="i*20"></rect>
+    <text [attr.y]="statItem.value" [attr.x]="(i+1)*20-i+i-5" fill="black" font-family="Verdana"> {{statItem.key}} - {{statItem.value}}</text>
   </g>
 </svg>
