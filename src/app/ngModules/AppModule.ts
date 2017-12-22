@@ -6,19 +6,22 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent, dTableComponent, PersonalInfoModalComponent, 
-         ClientStageComponent, PostStageComponent, PostThumbnailComponent }  from '../ngComponents/ngComponents';
+         ClientStageComponent, PostStageComponent, PostThumbnailComponent,
+         StatsStageComponent, BarsChartComponent }  from '../ngComponents/ngComponents';
 import { ListService } from '../ngServices/ngServices';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'clients', pathMatch: 'full' },
   { path: 'clients', component: ClientStageComponent },
-  { path: 'posts',      component: PostStageComponent }];
+  { path: 'posts',      component: PostStageComponent },
+  { path: 'stats',      component: StatsStageComponent }];
 
 @NgModule({
   imports:      [ BrowserModule, HttpModule, FormsModule, RouterModule.forRoot(appRoutes) ],
   declarations: [ AppComponent, dTableComponent, PersonalInfoModalComponent,  
-                 ClientStageComponent, PostStageComponent, PostThumbnailComponent ],
-  providers:    [ListService],
+                  ClientStageComponent, PostStageComponent, PostThumbnailComponent,
+                  StatsStageComponent, BarsChartComponent ],
+  providers:    [ ListService ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

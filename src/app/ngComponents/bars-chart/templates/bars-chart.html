@@ -1,0 +1,7 @@
+
+<h2>{{chartTitle}}</h2>
+<svg class="chart" width="420" height="350" aria-labelledby="title desc" role="img">
+  <g class="bar" *ngFor="let statItem of statItems; let i = index;">
+    <rect [attr.width]="statItem.value" height="19" [attr.y]="i*20" fill="red"></rect>
+  </g>
+</svg>
