@@ -3,5 +3,6 @@
 <svg class="chart" width="500" [attr.height]="statItems?.length*20" aria-labelledby="title desc" role="img">
   <g class="bar" *ngFor="let statItem of statItems; let i = index;">
     <rect [attr.width]="statItem.value" height="19" [attr.y]="i*20" fill="red"></rect>
+     <text [attr.x]="statItem.value" [attr.y]="(i+1)*20-i+i-5" font-family="Verdana" fill="blue">{{statItem.key}} - {{statItem.value}}</text>
   </g>
 </svg>
